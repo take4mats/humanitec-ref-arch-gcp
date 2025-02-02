@@ -24,6 +24,10 @@ terraform {
       source  = "hashicorp/random"
       version = "~> 3.5"
     }
+    google-beta = {
+      source  = "hashicorp/google-beta"
+      version = "~> 5.1"
+    }
   }
   required_version = ">= 1.3.0"
 }
@@ -37,6 +41,10 @@ provider "github" {
 }
 
 provider "google" {
+  project = var.project_id
+}
+
+provider "google-beta" {
   project = var.project_id
 }
 
